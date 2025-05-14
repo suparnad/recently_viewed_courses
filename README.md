@@ -101,8 +101,9 @@ The University wants a page on the website that shows:
 ## Test
 
 Now visit:
-https://my-first-drupal10-app.ddev.site:8443/course/view/psychology
-https://my-first-drupal10-app.ddev.site:8443/course/view/ai
+  https://my-first-drupal10-app.ddev.site:8443/course/view/psychology
+  
+  https://my-first-drupal10-app.ddev.site:8443/course/view/ai
 
 Then go back to:
 https://my-first-drupal10-app.ddev.site:8443/courses/recently-viewed
