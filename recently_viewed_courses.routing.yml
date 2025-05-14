@@ -1,0 +1,16 @@
+recently_viewed_courses.page:
+  path: "/courses/recently-viewed"
+  defaults:
+    _controller: '\Drupal\recently_viewed_courses\Controller\CoursePageController::render'
+    _title: "Recently Viewed Course Page"
+  requirements:
+    _permission: "access content"
+
+# Temporary Route to Simulate Viewing a Course
+recently_viewed_courses.track_course:
+  path: "/course/view/{name}"
+  defaults:
+    _controller: '\Drupal\recently_viewed_courses\Controller\CoursePageController::trackCourse'
+    _title: "Viewing Course"
+  requirements:
+    _permission: "access content"

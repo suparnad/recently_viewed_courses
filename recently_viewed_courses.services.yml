@@ -1,0 +1,9 @@
+services:
+  recently_viewed_courses.tracker:
+    class: 'Drupal\recently_viewed_courses\Service\CourseTracker'
+    arguments: ["@request_stack"]
+  recently_viewed_courses.recently_viewed_lazy_builder:
+    class: 'Drupal\recently_viewed_courses\Service\RecentlyViewedLazyBuilder'
+    arguments:
+      - "@plugin.manager.block"
+      - "@context.repository"

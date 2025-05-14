@@ -1,0 +1,7 @@
+name: Recently viewed course
+type: module
+description: Show Recently viewed course
+core_version_requirement: ^11
+package: course
+dependencies:
+  - drupal:node

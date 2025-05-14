@@ -1,0 +1,18 @@
+<?php
+
+/**
+ * Implements hook_theme().
+ */
+function recently_viewed_courses_theme($existing, $type, $theme, $path) {
+  return [
+    'course_page' => [
+      'variables' => [
+        'title' => NULL,
+        'popular_courses' => NULL,
+        'recently_viewed' => NULL,
+      ],
+      'template' => 'course-page',
+      'path' => \Drupal::service('extension.list.module')->getPath('recently_viewed_courses') . '/templates',
+    ],
+  ];
+}
