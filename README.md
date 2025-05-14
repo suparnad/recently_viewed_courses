@@ -65,19 +65,35 @@ drush en recently_viewed_courses
 
 3. Visit /courses/recently-viewed to test the feature.
 
+---
+
 ## How It Works
 
-Page Rendering
-CoursePageController.php builds a render array with:
+1. CoursePageController.php
 
-#popular_courses: static HTML with permanent cache.
+    Defines the page route and render array.
+    
+    Uses #theme => 'course_page' to load the Twig template.
+    
+    Includes #lazy_builder to call a trusted service method to render the dynamic block.
 
-#recently_viewed: lazy-loaded block based on session (or direct rendering if preferred).
+2. RecentlyViewedBlock.php
 
-Block & Service
-RecentlyViewedBlock.php: Renders the non-cacheable list using a service.
+    A custom block plugin that fetches recently viewed course names from the session using a service (CourseTracker).
+    
+    Returned block content is never cached (#cache => ['max-age' => 0]).
 
-CourseTracker.php: Stores and retrieves course names from PHP session.
+3. CourseTracker.php
+
+    A custom service that adds and retrieves course names from PHP session.
+    
+    Limits the session history to 5 unique entries.
+
+4. RecentlyViewedLazyBuilder.php
+
+    A custom lazy builder service that securely loads and returns the RecentlyViewedBlock render array.
+    
+    Implements TrustedCallbackInterface to allow render() to be safely used with #lazy_builder.
 
 ---
 
