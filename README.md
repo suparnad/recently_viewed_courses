@@ -53,15 +53,16 @@ The University wants a page on the website that shows:
 
 1. Clone the module or copy it into the `modules/custom/` directory of your Drupal project.
 
-```bash
-cd web/modules/custom
-git clone https://github.com/your-repo/recently_viewed_courses.git
-
+  ```bash
+  cd web/modules/custom
+  git clone https://github.com/your-repo/recently_viewed_courses.git
+  ```
 
 2. Enable the module using Drush or the admin UI.
 
-```bash
-drush en recently_viewed_courses
+  ```bash
+  drush en recently_viewed_courses
+  ```
 
 3. Visit /courses/recently-viewed to test the feature.
 
